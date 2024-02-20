@@ -3,7 +3,6 @@ package tests;
 import src.LinkedList;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
-
 import org.junit.Test;
 
 /**
@@ -28,7 +27,7 @@ public class LinkedListTest {
      * Test 2: Añadir un elemento en un índice especificado
      */
     @Test
-    public void addingElementAtTheMiddle() {
+    public void addingElementInTheMiddle() {
         LinkedList<Integer> list = new LinkedList<>();
         list.add(1);
         list.add(2);
@@ -44,7 +43,7 @@ public class LinkedListTest {
      * Test 3: Eliminar un elemento en un índice especificado
      */
     @Test
-    public void removingElementAtTheMiddle() {
+    public void removingElementInTheMiddle() {
         LinkedList<Integer> list = new LinkedList<>();
         list.add(1);
         list.add(2);
