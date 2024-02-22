@@ -13,4 +13,6 @@ public interface IList<T> {
     public void remove(int index);
     
     public T search(int index);
+
+    public int size();
 }

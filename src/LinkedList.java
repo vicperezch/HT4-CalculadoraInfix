@@ -116,4 +116,13 @@ public class LinkedList<T> implements IList<T> {
 
         return temp.getValue();
     }
+
+
+    /**
+     * Obtiene el tamaño de la lista
+     * @return Tamaño de la lista
+     */
+    public int size() {
+        return length;
+    }
 }

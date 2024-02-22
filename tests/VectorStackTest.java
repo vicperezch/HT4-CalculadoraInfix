@@ -7,8 +7,8 @@ package tests;
  * Clase con los tests para el stack que trabaja con vectores
  */
 import src.VectorStack;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import org.junit.*;
 

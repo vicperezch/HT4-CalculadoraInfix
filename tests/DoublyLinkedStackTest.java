@@ -7,8 +7,8 @@ package tests;
  * Clase con los tests para el stack que trabaja con listas doblemente encadenadas
  */
 import src.DoublyLinkedStack;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 import org.junit.*;
 
 public class DoublyLinkedStackTest {
@@ -22,7 +22,7 @@ public class DoublyLinkedStackTest {
         myStack.push(5);
         myStack.push(2);
         myStack.push(3);
-        assertEquals(3, myStack.pop());
+        assertEquals(3, (int) myStack.pop());
     }
 
     /**
