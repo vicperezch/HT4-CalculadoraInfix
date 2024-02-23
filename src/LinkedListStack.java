@@ -24,12 +24,37 @@ public class LinkedListStack<T> implements IStack<T> {
      */
     @Override
     public T pop() {
-        if (stack.size() != 0) {
+        if (!isEmpty()) {
             T lastValue = stack.search(stack.size() - 1);
             stack.add(null, stack.size() - 1);
             return lastValue;
         }
         return null;
+    }
+
+    /**
+     * Devuelve el último elemento de la pila sin eliminarlo
+     * @return Último elemento de la pila
+     */
+    @Override
+    public T peek() {
+        if (!isEmpty()) {
+            T lastValue = stack.search(stack.size() - 1);
+            return lastValue;
+        }
+        return null;
+    }
+
+    /**
+     * Comprueba si la pila está vacía
+     */
+    @Override
+    public boolean isEmpty() {
+        if (stack.size() == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
     
 }

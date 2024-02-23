@@ -26,12 +26,36 @@ public class VectorStack<T> implements IStack<T> {
     */
     @Override
     public T pop() {
-        if (!stack.isEmpty()) {
+        if (!isEmpty()) {
             T lastValue = stack.get(stack.size() - 1);
             stack.set(stack.size() - 1, null);
             return lastValue;
         }
         return null;
+    }
+
+    /**
+     * Devuelve el último elemento de la pila sin eliminarlo
+     * @return Último elemento de la pila
+     */
+    @Override
+    public T peek() {
+        if (!isEmpty()) {
+            return stack.get(stack.size() - 1);
+        }
+        return null;
+    }
+
+    /**
+     * Comprueba si la pila está vacía
+     */
+    @Override
+    public boolean isEmpty() {
+        if (stack.isEmpty()) {
+            return true;
+        } else {
+            return false;
+        }
     }
     
 }
