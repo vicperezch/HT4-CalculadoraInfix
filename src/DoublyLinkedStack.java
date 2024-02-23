@@ -7,8 +7,7 @@ package src;
  * Clase personalizada que modela una pila que trabaja con listas doblemente encadenadas
  */
 public class DoublyLinkedStack<T> implements IStack<T> {
-    private DoublyLinkedNode<T> firstNode;
-    private DoublyLinkedNode<T> lastNode;
+    private DoublyLinkedList<T> stack = new DoublyLinkedList<T>();
 
     /**
      * Agrega un nuevo dato a la pila
@@ -16,18 +15,7 @@ public class DoublyLinkedStack<T> implements IStack<T> {
      */
     @Override
     public void push(T value) {
-        DoublyLinkedNode<T> temp = new DoublyLinkedNode<>(value);
-
-        if (lastNode == null) {
-            firstNode = temp;
-            lastNode = firstNode;
-
-        } else {
-            lastNode.setNext(temp);
-            temp.setPrevious(lastNode);
-            lastNode = temp;
-        }
-
+        stack.add(value);
     }
 
     /**
@@ -36,15 +24,12 @@ public class DoublyLinkedStack<T> implements IStack<T> {
      */
     @Override
     public T pop() {
-        if (firstNode != null) {
-            DoublyLinkedNode<T> current = lastNode;
-            T valueLast = lastNode.getValue();
-            current.getPrevious().setNext(null);
-            return valueLast;
-
-        } else {
-            return null;
+        if (stack.size() != 0) {
+            T lastValue = stack.search(stack.size() - 1);
+            stack.add(null, stack.size() - 1);
+            return lastValue;
         }
+        return null;
     }
     
 }

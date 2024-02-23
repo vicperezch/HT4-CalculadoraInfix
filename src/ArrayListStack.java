@@ -27,7 +27,9 @@ public class ArrayListStack<T> implements IStack<T>{
     @Override
     public T pop() {
         if (!stack.isEmpty()) {
-            return stack.get(stack.size() - 1);
+            T lastValue = stack.get(stack.size() - 1);
+            stack.set(stack.size() - 1, null);
+            return lastValue;
         }
         return null;
     }

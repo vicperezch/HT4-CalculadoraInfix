@@ -7,8 +7,7 @@ package src;
  * Clase personalizada que modela una pila que trabaja con listas encadenadas
  */
 public class LinkedListStack<T> implements IStack<T> {
-    private Node<T> firstNode;
-    private Node<T> lastNode; 
+    private LinkedList<T> stack = new LinkedList<T>();
 
     /**
      * Agrega un nuevo dato a la pila
@@ -16,15 +15,7 @@ public class LinkedListStack<T> implements IStack<T> {
      */
     @Override
     public void push(T value) {
-        if (lastNode == null) {
-            lastNode = new Node<T>(value);
-            firstNode = lastNode;
-
-        } else {
-            Node<T> current = new Node<T>(value);
-            current.setNext(firstNode);
-            firstNode = current;
-        }
+       stack.add(value);
     }
 
     /**
@@ -33,15 +24,12 @@ public class LinkedListStack<T> implements IStack<T> {
      */
     @Override
     public T pop() {
-        if (firstNode != null) {
-            T valueFirst = firstNode.getValue();
-            firstNode = firstNode.getNext();
-
-            return valueFirst;
-
-        } else {
-            return null;
+        if (stack.size() != 0) {
+            T lastValue = stack.search(stack.size() - 1);
+            stack.add(null, stack.size() - 1);
+            return lastValue;
         }
+        return null;
     }
     
 }
