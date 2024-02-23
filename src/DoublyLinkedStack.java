@@ -26,7 +26,7 @@ public class DoublyLinkedStack<T> implements IStack<T> {
     public T pop() {
         if (!isEmpty()) {
             T lastValue = stack.search(stack.size() - 1);
-            stack.add(null, stack.size() - 1);
+            stack.remove(stack.size() - 1);
             return lastValue;
         }
         return null;

@@ -88,7 +88,11 @@ public class DoublyLinkedList<T> implements IList<T> {
             throw new IndexOutOfBoundsException("Index out of bounds");
         }
 
-        if (index == 0) {
+        if (length == 1) {
+            firstNode = null;
+            lastNode = firstNode;
+
+        } else if (index == 0) {
             firstNode = firstNode.getNext();
             firstNode.setPrevious(null);
 
