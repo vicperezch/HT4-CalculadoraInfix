@@ -28,7 +28,7 @@ public class VectorStack<T> implements IStack<T> {
     public T pop() {
         if (!isEmpty()) {
             T lastValue = stack.get(stack.size() - 1);
-            stack.removeLast();
+            stack.remove(stack.size() - 1);
             return lastValue;
         }
         return null;
