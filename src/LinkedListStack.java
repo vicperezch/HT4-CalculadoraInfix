@@ -1,5 +1,7 @@
 package src;
 
+import java.util.LinkedList;
+
 /**
  * @author Nils Muralles 
  * @version 1.0.0
@@ -15,7 +17,7 @@ public class LinkedListStack<T> implements IStack<T> {
      */
     @Override
     public void push(T value) {
-       stack.add(value);
+        stack.add(value);
     }
 
     /**
@@ -25,7 +27,7 @@ public class LinkedListStack<T> implements IStack<T> {
     @Override
     public T pop() {
         if (!isEmpty()) {
-            T lastValue = stack.search(stack.size() - 1);
+            T lastValue = stack.get(stack.size() - 1);
             stack.remove(stack.size() - 1);
             return lastValue;
         }
@@ -39,8 +41,7 @@ public class LinkedListStack<T> implements IStack<T> {
     @Override
     public T peek() {
         if (!isEmpty()) {
-            T lastValue = stack.search(stack.size() - 1);
-            return lastValue;
+            return stack.get(stack.size() - 1);
         }
         return null;
     }
@@ -50,7 +51,7 @@ public class LinkedListStack<T> implements IStack<T> {
      */
     @Override
     public boolean isEmpty() {
-        if (stack.size() == 0) {
+        if (stack.isEmpty()) {
             return true;
         } else {
             return false;
